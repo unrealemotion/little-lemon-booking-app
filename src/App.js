@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer, useState, useEffect } from 'react'; 
 import './App.css';
 import BookingForm from './components/BookingForm';
 import ConfirmedBooking from './components/ConfirmedBooking';
@@ -25,7 +25,6 @@ export const updateTimes = (state, action) => {
 // Async function to fetch initial times
 export const initializeTimes = async (dispatch) => {
     const today = new Date();
-    const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
     try {
         const times = await fetchAPI(today); // Fetch for today initially
         dispatch({ type: 'SET_TIMES', payload: times }); // Dispatch action to set times
@@ -99,6 +98,7 @@ function App() {
               availableTimes={availableTimes}
               dispatchTimes={handleDateChange} // Pass the wrapper function
               submitForm={submitForm}
+              isSubmitting={isSubmitting}
             />
           </>
         ) : (

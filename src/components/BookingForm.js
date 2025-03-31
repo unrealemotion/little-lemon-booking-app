@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-function BookingForm({ availableTimes, dispatchTimes, submitForm }) {
+function BookingForm({ availableTimes, dispatchTimes, submitForm, isSubmitting }) {
   // State for form fields
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
@@ -225,9 +225,9 @@ function BookingForm({ availableTimes, dispatchTimes, submitForm }) {
 
 
       {/* Submit Button */}
-      <button type="submit" disabled={!isFormValid()} aria-label="On Click: Make Your reservation">
-        Make Your reservation
-      </button>
+      <button type="submit" disabled={!isFormValid() || isSubmitting} aria-label="On Click: Make Your reservation">
+        {isSubmitting ? 'Submitting...' : 'Make Your reservation'}
+        </button>
     </form>
   );
 }
