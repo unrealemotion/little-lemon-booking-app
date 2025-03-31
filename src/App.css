@@ -1,0 +1,161 @@
+/* Keep basic resets from previous example if needed */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Karla', sans-serif; /* Little Lemon font */ line-height: 1.6; color: #495E57; /* Primary text color */}
+.container.main-layout { max-width: 800px; margin: 20px auto; padding: 20px; }
+
+/* Header & Footer */
+.app-header, .app-footer { text-align: center; padding: 20px; background-color: #f4ce14; /* Yellow */ margin-bottom: 20px; }
+.app-header img { margin-bottom: 10px; }
+.app-header h1 { color: #495E57; margin: 0; }
+.app-footer { margin-top: 40px; background-color: #edefee; /* Light Gray */ font-size: 0.9em; color: #333; }
+
+h2 {
+  text-align: center;
+  color: #495E57;
+  margin-bottom: 25px;
+}
+
+/* Form Styling */
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  border: 1px solid #dee2e6; /* Light border for fieldsets */
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+legend {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #495E57;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #495E57; /* Primary Green */
+}
+
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="number"],
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da; /* Standard gray border */
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: 'Karla', sans-serif;
+}
+
+.form-group select {
+  appearance: none; /* For custom dropdown arrow if needed */
+  background-color: white;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Focus state for inputs */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #f4ce14; /* Yellow border on focus */
+  box-shadow: 0 0 0 2px rgba(244, 206, 20, 0.3);
+}
+
+/* Error Styling */
+.error-message {
+  color: #d9534f; /* Red for errors */
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+/* Styling for invalid inputs */
+input:invalid,
+select:invalid, /* Note: select validation might need JS */
+textarea:invalid {
+    /* You might not need this if using JS validation primarily */
+   /* border-color: #d9534f; */
+}
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #d9534f; /* Red border for invalid fields found by JS */
+}
+
+
+/* Submit Button */
+form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #f4ce14; /* Yellow */
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 10px;
+}
+
+form button[type="submit"]:hover {
+  background-color: #efc00a;
+}
+
+form button[type="submit"]:active {
+  transform: scale(0.99);
+}
+
+form button[type="submit"]:disabled {
+  background-color: #fdeeb3; /* Lighter yellow when disabled */
+  cursor: not-allowed;
+}
+
+/* Confirmation Message */
+.confirmation {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.confirmation h2 {
+    color: #4CAF50; /* Green for success */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .container.main-layout {
+    padding: 10px;
+  }
+  form {
+    padding: 20px;
+  }
+  fieldset {
+    padding: 15px;
+  }
+  h2 {
+    font-size: 1.6em;
+  }
+}
